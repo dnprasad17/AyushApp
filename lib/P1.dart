@@ -10,7 +10,7 @@ class P1 extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Select the Course'),
+          title: Text('AYUSH Pathyakram'),
           centerTitle: true,
         ),
         body: Center(
