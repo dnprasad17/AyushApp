@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyPhone extends StatefulWidget {
-  const MyPhone({super.key});
+class MyOtp extends StatefulWidget {
+  const MyOtp({super.key});
 
   @override
-  State<MyPhone> createState() => _MyPhoneState();
+  State<MyOtp> createState() => _MyOtpState();
 }
 
-class _MyPhoneState extends State<MyPhone> {
+class _MyOtpState extends State<MyOtp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +27,14 @@ class _MyPhoneState extends State<MyPhone> {
                 height: 25,
               ),
               Text(
-                "Phone Verification",
+                "OTP",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                "We need to register your phone without getting started!",
+                "Verify Your Phone Number",
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -54,16 +54,6 @@ class _MyPhoneState extends State<MyPhone> {
                     SizedBox(
                       width: 10,
                     ),
-                    SizedBox(
-                      width: 40,
-                      child: TextField(
-                        //controller: countryController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
                     Text(
                       "|",
                       style: TextStyle(fontSize: 33, color: Colors.grey),
@@ -76,7 +66,7 @@ class _MyPhoneState extends State<MyPhone> {
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Phone",
+                            hintText: "Otp",
                           ),
                         ))
                   ],
@@ -94,9 +84,9 @@ class _MyPhoneState extends State<MyPhone> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'otp');
+                      Navigator.pushNamed(context, 'P1');
                     },
-                    child: Text("Send the code")),
+                    child: Text("Click To Verify OTP")),
               )
             ],
           ),
