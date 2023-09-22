@@ -90,7 +90,9 @@ class _P5State extends State<P5> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Select the Book'),
+          title: Text('First Year Books'),
+          leading: IconButton(onPressed: (){}, icon: Icon(Icons.menu, size: 35,)),
+          actions: [IconButton(onPressed: (){}, icon: Icon(Icons.search_rounded, size: 35,)),],
           centerTitle: true,
         ),
         body: ListView.builder(

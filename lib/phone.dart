@@ -18,11 +18,7 @@ class _MyPhoneState extends State<MyPhone> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Image.asset(
-              //   'assets/images/img1.png',
-              //   width: 150,
-              //   height: 150,
-              // ),
+              Image(image: AssetImage('assets/images/phone_bg.jpg')),
               SizedBox(
                 height: 25,
               ),
