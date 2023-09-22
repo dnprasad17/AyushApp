@@ -38,6 +38,17 @@ class _P5State extends State<P5> {
             'The basic principles and the concepts of Rachana Sharir in ancient Ayurvedic literatures have been described thousands of years back. Unfortunately, they have not been edited in recent centuries. Therefore, it is possible that the students of modern science may experience difficulty while understanding some concepts of Rachana Sharir directly from ancient Ayurvedic literatures. In the present book, these topics are translated and described to this extent that the students will easily understand the concepts.Modern medical science has derived present anatomy after continuous scientific research and using advanced instruments and technics in this subject. Hence Modern Human Anatomy has become an integral subject for the B.A.M.S. students also.Every concept of Ayurvediya Rachana Sharir cannot be compared with the modern anatomy. It is not rational also. Many times there are differences in opinion among the experts. Hence Ayurvedic and modern topics are arranged separately in the syllabus. Considering these facts this book has been designed to support the students.',
       ),
     );
+
+    bookList.add(
+      Book(
+          bookName: 'Ayurvedic Human Physiology',
+          authorName: 'Vd. Pratibha V. Kulkarni, Vd. S. M. Vaidya',
+          rating: 2.5,
+          size: 24,
+          image: 'assets/images/Ayurvedic_Human_physiology.jpg',
+          bookDescription:
+              'The book includes some of the Ayurveda and some of the modern physiology points. This book is written strictly according to the curriculum framed by the CCIM for BAMS graduates. Part A and Part B are explained separately, covering all the syllabus points. Each topic is explained in simple English and suitable shlokas. This book is provided to collect all the syllabus together for the convenience of the students.'),
+    );
   }
 
   Widget MySuperCell(BuildContext context, int index) {
@@ -48,36 +59,51 @@ class _P5State extends State<P5> {
             MaterialPageRoute(
                 builder: (context) => MyDetailPage(bookList[index])));
       },
-      child: Card(
-        margin: EdgeInsets.all(16),
-        child: Container(
-          padding: EdgeInsets.all(16),
-          child: Row(
-            children: <Widget>[
-              Hero(
-                tag: bookList[index],
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  child: Image.asset(bookList[index].image),
-                ),
-              ),
-              SizedBox(width: 20,),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(bookList[index].bookName, style: GoogleFonts.openSans(fontSize: 20,letterSpacing: 1),),
-                  RatingBar(rating: bookList[index].rating, size: bookList[index].size),
-                  Row(
-                    children: [
-                      SizedBox(width: 90,),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.add_shopping_cart)),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.share_outlined))
-                    ],
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Card(
+          margin: EdgeInsets.all(16),
+          child: Container(
+            padding: EdgeInsets.all(16),
+            child: Row(
+              children: <Widget>[
+                Hero(
+                  tag: bookList[index],
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    child: Image.asset(bookList[index].image),
                   ),
-                ],
-              )
-            ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      bookList[index].bookName,
+                      style: GoogleFonts.openSans(fontSize: 20, letterSpacing: 1),
+                    ),
+                    RatingBar(
+                        rating: bookList[index].rating,
+                        size: bookList[index].size),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 90,
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.add_shopping_cart)),
+                        IconButton(
+                            onPressed: () {}, icon: Icon(Icons.share_outlined))
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -91,11 +117,24 @@ class _P5State extends State<P5> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('First Year Books'),
-          leading: IconButton(onPressed: (){}, icon: Icon(Icons.menu, size: 35,)),
-          actions: [IconButton(onPressed: (){}, icon: Icon(Icons.search_rounded, size: 35,)),],
+          leading: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.menu,
+                size: 35,
+              )),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.search_rounded,
+                  size: 35,
+                )),
+          ],
           centerTitle: true,
         ),
         body: ListView.builder(
+          scrollDirection: Axis.vertical,
           itemCount: bookList.length,
           itemBuilder: (context, index) => MySuperCell(context, index),
         ),
