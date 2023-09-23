@@ -16,11 +16,14 @@ class P1 extends StatelessWidget {
         body: Stack(
           fit: StackFit.expand,
           children: [
-            Center(
-              child: Image(
-                image: AssetImage('assets/images/bg_1.jpg'),
-                opacity: AlwaysStoppedAnimation(0.6),
-              ),
+            Column(
+              children: [
+                Image(
+                  image: AssetImage('assets/images/bg_1.jpg'),
+                  opacity: AlwaysStoppedAnimation(0.6),
+                  fit: BoxFit.fill,
+                ),
+              ],
             ),
             Center(
               child: Column(

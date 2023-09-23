@@ -2,7 +2,7 @@
     <application
         android:label="ayush_textbook"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ayush_pathyakram">
         <activity
             android:name=".MainActivity"
             android:exported="true"
